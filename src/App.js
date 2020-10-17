@@ -8,6 +8,8 @@ import Nav from './Components/header';
 import Home from './Components/home';
 import About from './Components/about';
 import Contact from './Components/contact';
+import QrCode from './Components/qrCode';
+import Movies from './Components/movies';
 
 
 export class App extends Component {
@@ -29,6 +31,15 @@ export class App extends Component {
             <Route path="/contact">
               <Contact />
             </Route>
+
+            <Route path="/qrCode">
+              <QrCode />
+            </Route>
+
+            <Route path="/movies">
+              <Movies />
+            </Route>
+
 
           </Switch>
         </div>
