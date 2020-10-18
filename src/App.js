@@ -10,6 +10,7 @@ import About from './Components/about';
 import Contact from './Components/contact';
 import QrCode from './Components/qrCode';
 import Movies from './Components/movies';
+import Movie from './Components/movie';
 
 
 export class App extends Component {
@@ -18,30 +19,16 @@ export class App extends Component {
       <Router>
         <div>
           <Nav />
+
           <Switch>
-
-            <Route path="/" exact>
-              <Home />
-            </Route>
-
-            <Route path="/about">
-              <About />
-            </Route>
-
-            <Route path="/contact">
-              <Contact />
-            </Route>
-
-            <Route path="/qrCode">
-              <QrCode />
-            </Route>
-
-            <Route path="/movies">
-              <Movies />
-            </Route>
-
-
+            <Route path="/" exact component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/qrCode" component={QrCode} />
+            <Route path="/movies" exact component={Movies} />
+            <Route path="/movies/:movie" component={Movie} />
           </Switch>
+
         </div>
       </Router>
     )

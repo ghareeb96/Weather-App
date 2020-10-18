@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 
 const QrCode = () => {
@@ -19,7 +19,7 @@ const QrCode = () => {
         <div>
 
             {/* <button onClick={fetchData}> Get Data </button> */}
-            <img src={"https://api.qrserver.com/v1/create-qr-code/?data=Ghareeb&size=300x300"} />
+            <img src={"https://api.qrserver.com/v1/create-qr-code/?data=Ghareeb&size=300x300"} alt="QrCode" />
         </div>
     )
 }
