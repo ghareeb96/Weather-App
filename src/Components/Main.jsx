@@ -5,12 +5,10 @@ import main from './Main.module.scss';
 const Main = () => {
     const apiKey = "a5056b2cc7ebb66431740de544b8888f";
 
-    const [city, setCity] = useState("");
-    const [weather, setWeather] = useState({});
+    const [city, setCity] = useState({});
+    const [searchText, setSearchText] = useState("");
     const [coords, setCoords] = useState({});
-    const handleChange = (e) => {
-        setCity(e.target.value);
-    }
+    const [weatherData, setWeatherData] = useState({});
 
     useEffect(() => {
         if (window.navigator.geolocation) {
@@ -26,46 +24,79 @@ const Main = () => {
 
     }, [])
 
-    const getLocation = () => {
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.long}&units=metric&lang=ar&appid=${apiKey}`)
-            // fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.long}&units=metric&lang=ar&appid=${apiKey}`)
-            .then(res => res.json())
-            .then(data => console.log(data))
-    }
-    const getLocation2 = () => {
-        // fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.long}&units=metric&lang=ar&appid=${apiKey}`)
-        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.long}&units=metric&lang=ar&appid=${apiKey}`)
-            .then(res => res.json())
-            .then(data => console.log(data))
+
+    const handleChange = (e) => {
+        setSearchText(e.target.value);
     }
 
-    const get_weather = (city) => {
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
+    const get_weather = () => {
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchText}&appid=${apiKey}`)
             .then(res => res.json())
-            .then(data => console.log(data))
-            .then(setCity(""))
+            .then(data => {
+                setCity(data)
+                setCoords({
+                    lat: data.coord.lat,
+                    long: data.coord.lon
+                })
+            })
+            .then(setSearchText(""))
+
     }
-    const unix = 1609115724;
-    const ms = unix * 1000;
-    const date = new Date(ms);
-    console.log(date.toLocaleString());
 
-    return (
-        <div className="weather">
-            <h1>Hello Weather</h1>
-            <form action="submit">
-                <input type="text" name="city" id="city" value={city}
-                    onChange={handleChange}
-                />
-                <button type="submit" onClick={(e) => {
-                    e.preventDefault()
-                    get_weather(city)
-                }}>Get Weather</button>
-            </form>
-            <button onClick={getLocation}>Get Location</button>
-            <button onClick={getLocation2}>Get Location</button>
 
-        </div>
-    )
+
+
+
+
+    useEffect(() => {
+        if (coords.lat) {
+            const getCity = () => {
+                fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.long}&units=metric&appid=${apiKey}`)
+                    .then(res => res.json())
+                    .then(data => setCity(data))
+            }
+
+            const getLocation = () => {
+                fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.long}&units=metric&appid=${apiKey}`)
+                    .then(res => res.json())
+                    .then(data => setWeatherData(data))
+            }
+
+            getLocation();
+            getCity();
+        }
+    }, [coords])
+
+
+
+
+
+
+
+    if (city.sys) {
+        return (
+            <div className={main.weather}>
+                <form action="submit">
+                    <input type="text" name="city" id="city" value={searchText}
+                        onChange={handleChange}
+                    />
+                    <button type="submit" onClick={(e) => {
+                        e.preventDefault()
+                        get_weather(city)
+                    }}>Get Weather</button>
+                </form>
+
+
+                <h1>{city.name + ", " + city.sys.country}</h1>
+            </div>
+        )
+    }
+    else {
+        return (
+            <div className="loading">
+
+            </div>
+        )
+    }
 }
 export default Main;
