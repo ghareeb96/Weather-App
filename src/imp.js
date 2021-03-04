@@ -28,3 +28,9 @@ dateObject.toLocaleString("en-US", {
 dateObject.toLocaleString("en-US", {
     timeZoneName: "short"
 }) // 12/9/2019, 10:30:15 AM CST
+
+
+const unix = 1609115724;
+const ms = unix * 1000;
+const date = new Date(ms);
+console.log(date.toLocaleString());
