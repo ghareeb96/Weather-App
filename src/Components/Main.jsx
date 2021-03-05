@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import CurrentWeather from "./CurrentWeather/CurrentWeather";
 import HourlyWeather from "./HourlyWeather/HourlyWeather";
 import DailyWeather from "./DailyWeather/DailyWeather";
-import main from './Main.module.scss';
+import main from './Main.scss';
 import Palestine from './Palestine.jpg';
 import { ReactComponent as SearchIcon } from "./search-interface-symbol.svg"
 import { ReactComponent as LocationIcon } from "./maps-and-flags.svg"
@@ -73,7 +73,10 @@ const Main = () => {
             const getCity = () => {
                 fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.long}&units=metric&appid=${apiKey}`)
                     .then(res => res.json())
-                    .then(data => setCity(data.name + " , " + data.sys.country))
+                    .then(data => {
+                        setCity(data.name + ", " + data.sys.country)
+                        console.log(data)
+                    })
             }
 
             const getLocation = () => {
@@ -103,18 +106,18 @@ const Main = () => {
 
 
         return (
-            <div className={main.weather}>
-                <div className={main.background}>
+            <div className="weather">
+                <div className="background">
                     <img src={Palestine} alt="Background" />
                 </div>
-                <div className={main.container}>
+                <div className="container">
                     <header>
-                        <div className={main.logo}>
+                        <div className="logo">
                             <h1><span>We</span>athers</h1>
                         </div>
-                        <div className={main.locationBar}>
+                        <div className="locationBar">
                             <h3>Change Location</h3>
-                            <div className={main.searchBar}>
+                            <div className="searchBar">
                                 <input type="text" name="city" id="city" value={searchText}
                                     onChange={handleChange}
                                 />
@@ -123,7 +126,7 @@ const Main = () => {
                                     get_weather()
                                 }}> <SearchIcon /> </button>
                             </div>
-                            <div className={main.locationBtn}>
+                            <div className="locationBtn">
                                 <button onClick={() => getLocationWeather()}>
                                     <LocationIcon />
                                     My Location

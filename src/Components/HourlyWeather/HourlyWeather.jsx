@@ -1,5 +1,5 @@
 import React from 'react'
-import style from "./HourlyWeather.module.scss"
+import style from "./HourlyWeather.scss"
 
 const HourlyWeather = () => {
 

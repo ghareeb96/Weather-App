@@ -1,0 +1,94 @@
+.current-weather {
+    .main-info {
+        // height: 400px;
+        background: rgba(rgb(0, 0, 0), 0.4);
+        backdrop-filter: blur(3px);
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        margin-top: 50px;
+        border: none;
+        outline: none;
+
+        .time-div {
+            margin: 15px 0;
+
+            h4 {
+                font-size: 1.3rem;
+                color: #EBBC2F;
+                letter-spacing: 1px;
+            }
+
+        }
+
+        .city-div {
+            margin-bottom: 30px;
+
+            h2 {
+                font-size: 3rem;
+                font-weight: lighter;
+                color: white;
+                letter-spacing: 2px;
+            }
+        }
+
+        .temperature-div {
+            color: white;
+
+            h6 {
+                font-size: 1.3rem;
+                font-weight: lighter;
+                letter-spacing: 2px;
+
+                span {
+                    color: #EBBC2F;
+                }
+            }
+
+            .temperature {
+                h1 {
+                    font-size: 7rem;
+                    color: #EBBC2F;
+                }
+            }
+        }
+    }
+
+    .weather-details {
+        display: flex;
+        flex-direction: row;
+        height: 200px;
+        width: 1000px;
+        background: rgba(rgb(0, 0, 0), 0.4);
+        backdrop-filter: blur(3px);
+        border: none;
+        outline: none;
+        margin-top: 50px;
+
+        .detail-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 200px;
+            padding: 10px 0;
+            color: white;
+            align-items: center;
+
+            .detail-icon {
+
+                svg {
+                    height: 60px;
+                    fill: white;
+                }
+            }
+
+            .detail-info {
+                h4 {
+                    font-weight: lighter;
+
+                }
+            }
+        }
+    }
+}
