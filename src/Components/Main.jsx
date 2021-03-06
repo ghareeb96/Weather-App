@@ -75,7 +75,7 @@ const Main = () => {
                     .then(res => res.json())
                     .then(data => {
                         setCity(data.name + ", " + data.sys.country)
-                        console.log(data)
+                        // console.log(data)
                     })
             }
 

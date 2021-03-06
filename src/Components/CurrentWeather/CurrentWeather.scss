@@ -59,12 +59,20 @@
         display: flex;
         flex-direction: row;
         height: 200px;
-        width: 1000px;
+        width: 900px;
         background: rgba(rgb(0, 0, 0), 0.4);
         backdrop-filter: blur(3px);
         border: none;
         outline: none;
         margin-top: 50px;
+        justify-content: space-evenly;
+
+        .separator {
+            width: 2px;
+            height: 40%;
+            margin: auto;
+            background: white;
+        }
 
         .detail-container {
             display: flex;
@@ -74,19 +82,25 @@
             padding: 10px 0;
             color: white;
             align-items: center;
+            justify-content: space-evenly;
 
             .detail-icon {
 
                 svg {
-                    height: 60px;
+                    height: 50px;
                     fill: white;
                 }
             }
 
             .detail-info {
+                text-align: center;
+
                 h4 {
                     font-weight: lighter;
+                }
 
+                h2 {
+                    color: #EBBC2F;
                 }
             }
         }
