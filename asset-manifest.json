@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/Weather-App/static/css/main.bd8c03f5.chunk.css",
+    "main.js": "/Weather-App/static/js/main.a452618c.chunk.js",
+    "main.js.map": "/Weather-App/static/js/main.a452618c.chunk.js.map",
+    "runtime-main.js": "/Weather-App/static/js/runtime-main.2f2b1e57.js",
+    "runtime-main.js.map": "/Weather-App/static/js/runtime-main.2f2b1e57.js.map",
+    "static/js/2.96514bb0.chunk.js": "/Weather-App/static/js/2.96514bb0.chunk.js",
+    "static/js/2.96514bb0.chunk.js.map": "/Weather-App/static/js/2.96514bb0.chunk.js.map",
+    "index.html": "/Weather-App/index.html",
+    "precache-manifest.34b6759e41b21b447bf9ca06009cff57.js": "/Weather-App/precache-manifest.34b6759e41b21b447bf9ca06009cff57.js",
+    "service-worker.js": "/Weather-App/service-worker.js",
+    "static/css/main.bd8c03f5.chunk.css.map": "/Weather-App/static/css/main.bd8c03f5.chunk.css.map",
+    "static/js/2.96514bb0.chunk.js.LICENSE": "/Weather-App/static/js/2.96514bb0.chunk.js.LICENSE",
+    "static/media/Palestine.jpg": "/Weather-App/static/media/Palestine.60ce5114.jpg",
+    "static/media/humidity.f7efb53c.svg": "/Weather-App/static/media/humidity.f7efb53c.svg",
+    "static/media/maps-and-flags.d9d208a8.svg": "/Weather-App/static/media/maps-and-flags.d9d208a8.svg",
+    "static/media/pressure.f731ab6a.svg": "/Weather-App/static/media/pressure.f731ab6a.svg",
+    "static/media/rain.5f95999b.svg": "/Weather-App/static/media/rain.5f95999b.svg",
+    "static/media/search-interface-symbol.f62d4aa0.svg": "/Weather-App/static/media/search-interface-symbol.f62d4aa0.svg",
+    "static/media/visibility.4b4cf493.svg": "/Weather-App/static/media/visibility.4b4cf493.svg",
+    "static/media/wind.9737c2a4.svg": "/Weather-App/static/media/wind.9737c2a4.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2f2b1e57.js",
+    "static/js/2.96514bb0.chunk.js",
+    "static/css/main.bd8c03f5.chunk.css",
+    "static/js/main.a452618c.chunk.js"
+  ]
+}
