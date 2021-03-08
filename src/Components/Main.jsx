@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import CurrentWeather from "./CurrentWeather/CurrentWeather";
+import fullpage from "fullpage.js";
 import HourlyWeather from "./HourlyWeather/HourlyWeather";
 import DailyWeather from "./DailyWeather/DailyWeather";
 import main from './Main.scss';
+import { gsap, TimelineMax } from "gsap";
 import Palestine from './Palestine.jpg';
 import { ReactComponent as SearchIcon } from "./search-interface-symbol.svg"
 import { ReactComponent as LocationIcon } from "./maps-and-flags.svg"
 
-
+gsap.registerPlugin()
 const Main = () => {
     const apiKey = "a5056b2cc7ebb66431740de544b8888f";
 
@@ -17,6 +19,8 @@ const Main = () => {
     const [currentWeather, setCurrentWeather] = useState(null);
     const [hourlyWeather, setHourlyWeather] = useState(null);
     const [dailyWeather, setDailyWeather] = useState(null);
+    const [slider, setSlider] = useState(null);
+    const [animationSection, setSection] = useState(null);
 
 
 
@@ -65,6 +69,8 @@ const Main = () => {
         }
 
         defaultWeather()
+
+
     }, [])
 
 
@@ -94,6 +100,133 @@ const Main = () => {
         }
 
     }, [coords])
+    let t1 = new TimelineMax();
+
+    new fullpage('#fullpage', {
+        autoScrolling: true,
+        scrollingSpeed: 900,
+        navigation: true,
+        navigationPosition: 'right',
+        showActiveTooltip: true,
+        anchors: ['currentWeather', 'secondPage'],
+        navigationTooltips: ['Current Weather', 'secondPage'],
+        verticalCentered: false,
+        // onLeave: (origin, destination, direction) => {
+        //     // setSection(destination.item)
+        //     // setSlider(animationSection.querySelector(".city-div"))
+        //     let slider = destination.item.querySelector(".city-div")
+        //     t1.fromTo(slider,
+        //         {
+        //             css: {
+        //                 opacity: 0,
+        //                 x: 40
+        //             }
+        //         },
+        //         {
+        //             css: {
+        //                 opacity: 1,
+        //                 x: 0
+        //             },
+        //             duration: 0.5,
+        //             delay: 1
+        //             // yoyo: true,
+        //             // stagger: 0.2
+        //         }
+        //     )
+
+        //     // console.log(origin, destination, direction)
+        // },
+        afterRender: (origin) => {
+            t1
+                .fromTo(origin.item.querySelector(".main-info"),
+                    {
+                        css: {
+                            opacity: 0,
+                            x: -40
+                        }
+                    }, {
+
+                    css: {
+                        opacity: 1,
+                        x: 0
+                    },
+                    duration: 0.5,
+                    delay: 0.4
+                })
+                .fromTo(origin.item.querySelector(".weather-details"),
+                    {
+                        css: {
+                            opacity: 0,
+                            x: -40
+                        }
+                    }, {
+
+                    css: {
+                        opacity: 1,
+                        x: 0
+                    },
+                    duration: 0.5,
+                }
+
+                )
+                .fromTo(origin.item.querySelector(".city-div"),
+                    {
+                        css: {
+                            opacity: 0,
+                            y: 20
+                        }
+                    },
+                    {
+                        css: {
+                            opacity: 1,
+                            y: 0
+                        },
+                        duration: 0.5,
+                        delay: 0.5
+                        // yoyo: true,
+                        // stagger: 0.2
+                    }
+                )
+                .fromTo(origin.item.querySelector(".temperature-div"),
+                    {
+                        css: {
+                            opacity: 0,
+                            y: 20
+                        }
+                    },
+                    {
+                        css: {
+                            opacity: 1,
+                            y: 0
+                        },
+                        duration: 0.5,
+                        delay: 0.5
+                    }
+
+                )
+                .fromTo(origin.item.querySelectorAll(".detail-container"),
+                    {
+                        css: {
+                            opacity: 0,
+                            y: 20
+                        }
+                    },
+                    {
+                        css: {
+                            opacity: 1,
+                            y: 0,
+
+                        },
+                        duration: 0.5,
+                        delay: 0.3,
+                        stagger: 0.2
+                    }
+                )
+        }
+
+
+
+    });
 
     if (currentWeather) {
         const unix = new Date(currentWeather.dt * 1000);
@@ -134,14 +267,25 @@ const Main = () => {
                             </div>
                         </div>
                     </header>
-                    <main>
-                        <CurrentWeather
-                            time={time}
-                            city={city}
-                            currentWeather={currentWeather}
-                        />
+                    <main
+                        id="fullpage"
+                    >
+
+                        <div className="section"  >
+                            <CurrentWeather
+                                time={time}
+                                city={city}
+                                currentWeather={currentWeather}
+                            />
+                        </div>
+                        <div className="section" >
+                            <div className="city-div">
+                                <h1>New Section</h1>
+                            </div>
+                        </div>
                         {/* <HourlyWeather />
                         <DailyWeather /> */}
+
                     </main>
                 </div>
 

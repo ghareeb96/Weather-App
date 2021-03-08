@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import style from "./CurrentWeather.scss"
+import { gsap, TweenLite } from "gsap";
 import { ReactComponent as Rain } from "./rain.svg"
 import { ReactComponent as Wind } from "./wind.svg"
 import { ReactComponent as Visibility } from "./visibility.svg"
@@ -10,6 +11,12 @@ import { ReactComponent as Pressure } from "./pressure.svg"
 const CurrentWeather = (props) => {
     const temperature = Math.floor(props.currentWeather.temp)
     const feelsLike = Math.floor(props.currentWeather.feels_like)
+
+    // useEffect(() => {
+    //     if (props.currentWeather) {
+
+    //     }
+    // })
 
     return (
         <div className="current-weather">
