@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/Weather-App/static/css/main.5417f124.chunk.css",
-    "main.js": "/Weather-App/static/js/main.3b13240d.chunk.js",
-    "main.js.map": "/Weather-App/static/js/main.3b13240d.chunk.js.map",
+    "main.css": "/Weather-App/static/css/main.a58c6870.chunk.css",
+    "main.js": "/Weather-App/static/js/main.636d1392.chunk.js",
+    "main.js.map": "/Weather-App/static/js/main.636d1392.chunk.js.map",
     "runtime-main.js": "/Weather-App/static/js/runtime-main.2f2b1e57.js",
     "runtime-main.js.map": "/Weather-App/static/js/runtime-main.2f2b1e57.js.map",
-    "static/js/2.f8664807.chunk.js": "/Weather-App/static/js/2.f8664807.chunk.js",
-    "static/js/2.f8664807.chunk.js.map": "/Weather-App/static/js/2.f8664807.chunk.js.map",
+    "static/js/2.c736851a.chunk.js": "/Weather-App/static/js/2.c736851a.chunk.js",
+    "static/js/2.c736851a.chunk.js.map": "/Weather-App/static/js/2.c736851a.chunk.js.map",
     "index.html": "/Weather-App/index.html",
-    "precache-manifest.e509ed5f0ced7e692fce648db87214b8.js": "/Weather-App/precache-manifest.e509ed5f0ced7e692fce648db87214b8.js",
+    "precache-manifest.d0723cd323148edfa7d30841f66c9ff2.js": "/Weather-App/precache-manifest.d0723cd323148edfa7d30841f66c9ff2.js",
     "service-worker.js": "/Weather-App/service-worker.js",
-    "static/css/main.5417f124.chunk.css.map": "/Weather-App/static/css/main.5417f124.chunk.css.map",
-    "static/js/2.f8664807.chunk.js.LICENSE": "/Weather-App/static/js/2.f8664807.chunk.js.LICENSE",
+    "static/css/main.a58c6870.chunk.css.map": "/Weather-App/static/css/main.a58c6870.chunk.css.map",
+    "static/js/2.c736851a.chunk.js.LICENSE": "/Weather-App/static/js/2.c736851a.chunk.js.LICENSE",
     "static/media/Palestine.jpg": "/Weather-App/static/media/Palestine.60ce5114.jpg",
+    "static/media/cloudy.8310e98f.svg": "/Weather-App/static/media/cloudy.8310e98f.svg",
     "static/media/humidity.f7efb53c.svg": "/Weather-App/static/media/humidity.f7efb53c.svg",
     "static/media/left-arrow.de3e7da0.svg": "/Weather-App/static/media/left-arrow.de3e7da0.svg",
     "static/media/maps-and-flags.d9d208a8.svg": "/Weather-App/static/media/maps-and-flags.d9d208a8.svg",
@@ -24,8 +25,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.2f2b1e57.js",
-    "static/js/2.f8664807.chunk.js",
-    "static/css/main.5417f124.chunk.css",
-    "static/js/main.3b13240d.chunk.js"
+    "static/js/2.c736851a.chunk.js",
+    "static/css/main.a58c6870.chunk.css",
+    "static/js/main.636d1392.chunk.js"
   ]
 }
