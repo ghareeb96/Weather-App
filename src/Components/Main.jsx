@@ -99,6 +99,7 @@ const Main = () => {
         }
 
     }, [coords])
+
     let t1 = new TimelineMax();
 
     new fullpage('#fullpage', {
@@ -111,31 +112,22 @@ const Main = () => {
         navigationTooltips: ['Current Weather', 'Hourly Weather', 'Daily Weather'],
         verticalCentered: false,
         menu: '#menu',
-        // onLeave: (origin, destination, direction) => {
-        //     // setSection(destination.item)
-        //     // setSlider(animationSection.querySelector(".city-div"))
-        //     let slider = destination.item.querySelector(".city-div")
-        //     t1.fromTo(slider,
-        //         {
-        //             css: {
-        //                 opacity: 0,
-        //                 x: 40
-        //             }
-        //         },
-        //         {
-        //             css: {
-        //                 opacity: 1,
-        //                 x: 0
-        //             },
-        //             duration: 0.5,
-        //             delay: 1
-        //             // yoyo: true,
-        //             // stagger: 0.2
-        //         }
-        //     )
-
-        //     // console.log(origin, destination, direction)
-        // },
+        onLeave: (origin, destination, direction) => {
+            gsap.fromTo(destination.item, {
+                css: {
+                    opacity: 0,
+                    y: 40
+                }
+            },
+                {
+                    css: {
+                        opacity: 1,
+                        y: 0
+                    },
+                    duration: 0.5,
+                    delay: 0.6
+                })
+        },
         afterRender: (origin) => {
             t1
                 .fromTo(origin.item.querySelector(".main-info"),
@@ -229,13 +221,7 @@ const Main = () => {
     });
 
     if (currentWeather) {
-        const unix = new Date(currentWeather.dt * 1000);
-        const time = unix.toLocaleString("en-US", {
-            month: "long",
-            day: "numeric",
-            hour: "numeric",
-            minute: "numeric"
-        });
+
 
 
         return (
@@ -286,20 +272,17 @@ const Main = () => {
 
                         <div className="section">
                             <CurrentWeather
-                                time={time}
                                 city={city}
                                 currentWeather={currentWeather}
                             />
                         </div>
                         <div className="section">
                             <HourlyWeather
-                                time={time}
                                 city={city}
                                 hourlyWeather={hourlyWeather} />
                         </div>
                         <div className="section">
                             <DailyWeather
-                                time={time}
                                 city={city}
                                 dailyWeather={dailyWeather} />
                         </div>

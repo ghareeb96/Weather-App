@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import "./HourlyWeather.scss"
+import { gsap, TimelineMax } from "gsap";
 import { ReactComponent as Wind } from "../wind.svg"
 import { ReactComponent as Visibility } from "../visibility.svg"
 import { ReactComponent as Humidity } from "../humidity.svg"
@@ -11,6 +12,7 @@ import { ReactComponent as Arrow } from "../left-arrow.svg"
 const HourlyWeather = (props) => {
     const [hours, setHours] = useState(null);
     const [activeHour, setActiveHour] = useState(null)
+    const t1 = new TimelineMax();
 
     useEffect(() => {
         if (props.hourlyWeather) {
@@ -18,6 +20,51 @@ const HourlyWeather = (props) => {
             setActiveHour(props.hourlyWeather[1])
         }
     }, [props.hourlyWeather])
+
+    useEffect(
+        () => {
+            if (activeHour) {
+                t1.fromTo(".weather-section", {
+                    css: {
+                        opacity: 0
+                    },
+                }, {
+                    css: {
+                        opacity: 1
+                    },
+                    duration: 0.2
+                })
+                    .fromTo(".main-info", {
+                        css: {
+                            opacity: 0,
+                            x: -50
+                        }
+                    },
+                        {
+                            css: {
+                                opacity: 1,
+                                x: 0
+                            },
+                            duration: 0.4
+                        })
+                    .fromTo(".weather-details", {
+                        css: {
+                            opacity: 0,
+                            x: 50
+                        }
+                    },
+                        {
+                            css: {
+                                opacity: 1,
+                                x: 0
+                            },
+                            duration: 0.4
+                        }
+
+                    )
+            }
+        }, [activeHour]
+    )
 
     const get_time = (dt_time) => {
         const unix = new Date(dt_time * 1000);
