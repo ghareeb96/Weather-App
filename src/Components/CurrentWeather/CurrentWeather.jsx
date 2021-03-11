@@ -1,22 +1,16 @@
 import React, { useEffect } from 'react'
 import style from "./CurrentWeather.scss"
-import { gsap, TweenLite } from "gsap";
-import { ReactComponent as Rain } from "./rain.svg"
-import { ReactComponent as Wind } from "./wind.svg"
-import { ReactComponent as Visibility } from "./visibility.svg"
-import { ReactComponent as Humidity } from "./humidity.svg"
-import { ReactComponent as Pressure } from "./pressure.svg"
+// import { gsap, TweenLite } from "gsap";
+import { ReactComponent as Wind } from "../wind.svg"
+import { ReactComponent as Visibility } from "../visibility.svg"
+import { ReactComponent as Humidity } from "../humidity.svg"
+import { ReactComponent as Pressure } from "../pressure.svg"
 
 
 const CurrentWeather = (props) => {
     const temperature = Math.floor(props.currentWeather.temp)
     const feelsLike = Math.floor(props.currentWeather.feels_like)
 
-    // useEffect(() => {
-    //     if (props.currentWeather) {
-
-    //     }
-    // })
 
     return (
         <div className="current-weather">
@@ -29,22 +23,13 @@ const CurrentWeather = (props) => {
                 </div>
                 <div className="temperature-div">
                     <h6>{props.currentWeather.weather[0].main}</h6>
-                    <div className="temperature">
-                        <h1>{`${temperature}°C`}</h1>
-                        <h6>Feels Like <span>{`${feelsLike}°C`}</span></h6>
-                    </div>
+                    <h1>{`${temperature}°C`}</h1>
+                    <h6>Feels Like <span>{`${feelsLike}°C`}</span></h6>
                 </div>
 
             </div>
 
             <div className="weather-details">
-                {/* <div className="detail-container">
-                    <div className="detail-icon"><Rain /></div>
-                    <div className="detail-info">
-                        <h4>Chance to Rain</h4>
-                        <h2>40%</h2>
-                    </div>
-                </div> */}
                 <div className="detail-container">
                     <div className="detail-icon"><Wind /></div>
                     <div className="detail-info">
@@ -52,7 +37,6 @@ const CurrentWeather = (props) => {
                         <h2>{`${props.currentWeather.wind_speed} km/h`}</h2>
                     </div>
                 </div>
-                <div className="separator"></div>
                 <div className="detail-container">
                     <div className="detail-icon"><Visibility /></div>
                     <div className="detail-info">
@@ -60,7 +44,6 @@ const CurrentWeather = (props) => {
                         <h2>{`${props.currentWeather.visibility / 1000} km`}</h2>
                     </div>
                 </div>
-                <div className="separator"></div>
                 <div className="detail-container">
                     <div className="detail-icon"><Humidity /></div>
                     <div className="detail-info">
@@ -68,7 +51,6 @@ const CurrentWeather = (props) => {
                         <h2>{`${props.currentWeather.humidity} %`}</h2>
                     </div>
                 </div>
-                <div className="separator"></div>
                 <div className="detail-container">
                     <div className="detail-icon"><Pressure /></div>
                     <div className="detail-info">

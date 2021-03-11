@@ -1,5 +1,5 @@
 .weather {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 
     .background {
@@ -13,17 +13,17 @@
             width: 100%;
             object-position: center;
             object-fit: cover;
+            filter: blur(2px);
         }
 
-        &::after {
-            content: "";
+        .overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background: black;
-            opacity: 0.4;
+            opacity: 0.5;
         }
     }
 
@@ -33,25 +33,79 @@
         height: 100vh;
 
         header {
-            height: 65px;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+            height: 150px;
             display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
+            flex-direction: column;
+            // align-items: center;
+            justify-content: space-evenly;
             z-index: 3;
+            margin-bottom: 30px;
+            width: 85%;
+            margin: 0 auto;
+            background: none;
 
-            .logo {
-                h1 {
-                    font-size: 2rem;
-                    letter-spacing: 2px;
-                    font-weight: bolder;
-                    color: white;
+            .top-header {
+                display: flex;
+                width: 100%;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+
+                .logo {
+                    h1 {
+                        font-size: 2rem;
+                        letter-spacing: 2px;
+                        font-weight: bolder;
+                        color: white;
+                    }
+
+                    span {
+                        color: #EBBC2F;
+                    }
                 }
 
-                span {
-                    color: #EBBC2F;
+                .nav {
+                    // height: 50px;
+                    width: 500px;
+
+
+                    ul {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        li {
+                            list-style: none;
+
+                            &.active {
+                                a {
+                                    color: #EBBC2F;
+                                    background: rgba(black, 0.6);
+                                }
+                            }
+
+                            a {
+                                color: white;
+                                text-decoration: none;
+                                cursor: pointer;
+                                padding: 0.5rem 0.7rem;
+                                border: 1px solid white;
+                                border-radius: 5px;
+
+
+
+                            }
+                        }
+                    }
                 }
+
             }
+
 
             .locationBar {
                 display: flex;
@@ -118,7 +172,12 @@
             }
         }
 
-        #fullpage {}
+        .section {
+            min-height: calc(100vh - 150px);
+        }
+
+
+
     }
 
 

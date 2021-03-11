@@ -1,18 +1,20 @@
 .current-weather {
+    display: flex;
+    flex-direction: row;
+
     .main-info {
-        // height: 400px;
         background: rgba(rgb(0, 0, 0), 0.4);
-        // backdrop-filter: blur(3px);
         width: 400px;
+        height: 400px;
         display: flex;
         flex-direction: column;
+        justify-content: space-evenly;
         padding: 10px;
-        margin-top: 50px;
         border: none;
         outline: none;
+        margin-top: 150px;
 
         .time-div {
-            margin: 15px 0;
 
             h4 {
                 font-size: 1.3rem;
@@ -35,6 +37,9 @@
 
         .temperature-div {
             color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
 
             h6 {
                 font-size: 1.3rem;
@@ -46,43 +51,39 @@
                 }
             }
 
-            .temperature {
-                h1 {
-                    font-size: 7rem;
-                    color: #EBBC2F;
-                }
+            h1 {
+                font-size: 8rem;
+                color: #EBBC2F;
             }
+
         }
     }
 
     .weather-details {
-        display: flex;
-        flex-direction: row;
-        height: 200px;
-        width: 900px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        // flex-direction: row;
+        height: 400px;
+        width: 500px;
         background: rgba(rgb(0, 0, 0), 0.4);
-        // backdrop-filter: blur(3px);
         border: none;
         outline: none;
-        margin-top: 50px;
+        margin: auto 50px;
         justify-content: space-evenly;
+        margin-top: 150px;
 
-        .separator {
-            width: 2px;
-            height: 40%;
-            margin: auto;
-            background: white;
-        }
+
 
         .detail-container {
             display: flex;
             flex-direction: column;
-            height: 100%;
-            width: 200px;
+            height: 200px;
+            min-width: 200px;
             padding: 10px 0;
             color: white;
             align-items: center;
             justify-content: space-evenly;
+
 
             .detail-icon {
 
