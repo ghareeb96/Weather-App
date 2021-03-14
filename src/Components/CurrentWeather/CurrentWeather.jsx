@@ -32,8 +32,8 @@ const CurrentWeather = (props) => {
                     <h2>{props.city}</h2>
                 </div>
                 <div className="temperature-div">
-                    <h6>{props.currentWeather.weather[0].main}</h6>
                     <h1>{`${temperature}°C`}</h1>
+                    <h6>{props.currentWeather.weather[0].main}</h6>
                     <h6>Feels Like <span>{`${feelsLike}°C`}</span></h6>
                 </div>
 

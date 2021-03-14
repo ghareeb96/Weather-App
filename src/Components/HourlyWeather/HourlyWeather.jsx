@@ -24,7 +24,7 @@ const HourlyWeather = (props) => {
     useEffect(
         () => {
             if (activeHour) {
-                t1.fromTo(".weather-section", {
+                t1.fromTo(".hourly-weather .weather-section", {
                     css: {
                         opacity: 0
                     },
@@ -34,7 +34,7 @@ const HourlyWeather = (props) => {
                     },
                     duration: 0.2
                 })
-                    .fromTo(".main-info", {
+                    .fromTo(".hourly-weather .main-info", {
                         css: {
                             opacity: 0,
                             x: -50
@@ -47,7 +47,7 @@ const HourlyWeather = (props) => {
                             },
                             duration: 0.4
                         })
-                    .fromTo(".weather-details", {
+                    .fromTo(".hourly-weather .weather-details", {
                         css: {
                             opacity: 0,
                             x: 50
@@ -106,8 +106,8 @@ const HourlyWeather = (props) => {
                             <h2>{props.city}</h2>
                         </div>
                         <div className="temperature-div">
-                            <h6>{activeHour.weather[0].main}</h6>
                             <h1>{`${Math.floor(activeHour.temp)}°C`}</h1>
+                            <h6>{activeHour.weather[0].main}</h6>
                             <h6>Feels Like <span>{`${Math.floor(activeHour.feels_like)}°C`}</span></h6>
                         </div>
                     </div>
@@ -117,7 +117,7 @@ const HourlyWeather = (props) => {
                             <div className="detail-icon"><Rain /></div>
                             <div className="detail-info">
                                 <h4>Chance to Rain</h4>
-                                <h2>{`${(activeHour.pop) * 100} %`}</h2>
+                                <h2>{`${Math.floor((activeHour.pop) * 100)} %`}</h2>
                             </div>
                         </div>
                         <div className="detail-container">

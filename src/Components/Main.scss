@@ -69,8 +69,7 @@
                 }
 
                 .nav {
-                    // height: 50px;
-                    width: 500px;
+                    width: 50%;
 
 
                     ul {
@@ -94,7 +93,7 @@
                                 text-decoration: none;
                                 cursor: pointer;
                                 padding: 0.5rem 0.7rem;
-                                border: 1px solid white;
+                                // border: 1px solid white;
                                 border-radius: 5px;
 
 
@@ -124,7 +123,7 @@
                     outline: none;
                     border: none;
                     height: 100%;
-                    padding: 5px;
+                    padding: 0.3rem 0.5rem;
 
 
                     svg {
@@ -142,7 +141,7 @@
                     margin: 0 10px;
 
                     input {
-                        padding: 5px;
+                        padding: 5px 10px;
                         font-size: 1rem;
                         background: none;
                         outline: none;
@@ -162,10 +161,12 @@
                         font-size: 1.2rem;
                         border-radius: 3px;
                         border: 1px solid white;
+                        padding: 5px 10px;
+
 
                         svg {
                             fill: rgb(153, 21, 21);
-                            margin-right: 5px;
+                            margin-right: 10px;
                         }
                     }
                 }
@@ -173,12 +174,472 @@
         }
 
         .section {
-            min-height: calc(100vh - 150px);
+            height: 100vh;
         }
 
 
 
     }
 
+
+}
+
+@media screen and (min-width : 1660px) {
+    html {
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (min-width : 1367px) {
+    html {
+        font-size: 18px;
+    }
+
+    .weather {
+
+        .container {
+            header {
+                height: 200px;
+
+
+                .locationBar {
+
+
+                    button {
+                        svg {
+                            width: 30px;
+                        }
+                    }
+
+                    .searchBar {
+                        margin: 0 20px;
+                    }
+
+                }
+            }
+
+            .current-weather {
+                min-height: 750px;
+
+                .main-info {
+                    margin-top: 250px;
+
+
+                }
+
+                .weather-details {
+                    margin-top: 250px;
+
+                    .detail-container {
+
+                        .detail-icon {
+
+                            svg {
+                                height: 60px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .hourly-weather,
+            .daily-weather {
+                .weather-section {
+                    margin-top: 200px;
+
+
+                    .weather-details {
+
+                        .detail-container {
+
+                            .detail-icon {
+
+                                svg {
+                                    height: 60px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width : 1080px) {
+    html {
+        font-size: 14px;
+    }
+
+    .weather {
+        .container {
+            header {}
+
+            .current-weather {
+                .main-info {
+                    min-height: 300px;
+                    margin-top: 150px;
+
+                    .time-div {
+
+                        h4 {}
+
+                    }
+
+                    .city-div {
+
+                        h2 {
+                            letter-spacing: 1px;
+                        }
+                    }
+
+                    .temperature-div {
+
+                        h6 {
+                            letter-spacing: 1px;
+                        }
+
+                        h1 {}
+
+                    }
+                }
+
+                .weather-details {
+
+                    min-height: 300px;
+                    margin-top: 150px;
+
+                    .detail-container {
+                        height: 150px;
+                        width: 150px;
+                        padding: 5px 0;
+
+                        .detail-icon {
+
+                            svg {
+                                height: 40px;
+                            }
+                        }
+
+                        .detail-info {
+                            text-align: center;
+
+                            h4 {
+                                font-weight: lighter;
+                            }
+
+                            h2 {
+                                color: #EBBC2F;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .hourly-weather,
+            .daily-weather {
+                .weather-section {
+                    .weather-details {
+
+                        .detail-container {
+                            height: 150px;
+                            width: 150px;
+                            padding: 5px 0;
+
+                            .detail-icon {
+
+                                svg {
+                                    height: 40px;
+                                }
+                            }
+
+                            .detail-info {
+                                text-align: center;
+
+                                h4 {
+                                    font-weight: lighter;
+                                }
+
+                                h2 {
+                                    color: #EBBC2F;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width : 967px) {
+    html {
+        font-size: 12px;
+    }
+
+    .weather {
+        .container {
+            header {}
+
+            .current-weather {
+                .weather-details {
+
+                    .detail-container {
+                        height: 100px;
+                        width: 100px;
+                        padding: 5px 0;
+
+                        .detail-icon {
+
+                            svg {
+                                height: 40px;
+                            }
+                        }
+
+                        .detail-info {
+                            text-align: center;
+
+                            h4 {
+                                font-weight: lighter;
+                            }
+
+                            h2 {
+                                color: #EBBC2F;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .hourly-weather,
+            .daily-weather {
+                .weather-section {
+                    .weather-details {
+
+
+                        .detail-container {
+                            height: 100px;
+                            width: 100px;
+                            padding: 5px 0;
+
+                            .detail-icon {
+
+                                svg {
+                                    height: 40px;
+                                }
+                            }
+
+                            .detail-info {
+                                text-align: center;
+
+                                h4 {
+                                    font-weight: lighter;
+                                }
+
+                                h2 {
+                                    color: #EBBC2F;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .days-section {
+                    .day-container {
+                        .temperature {
+                            h2 {
+                                font-size: 1.5rem;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+}
+
+
+@media screen and (max-width : 600px) {
+    html {
+        font-size: 10px;
+    }
+
+    .weather {
+        .background {
+            .overlay {
+                opacity: 0.7;
+            }
+        }
+
+        .container {
+            width: 90%;
+
+            header {
+                width: 90%;
+                height: 120px;
+
+                .nav {
+                    display: none;
+                }
+
+                .locationBar {
+                    flex-direction: row;
+
+                    h3 {
+                        color: #EBBC2F;
+                        letter-spacing: 1px;
+                        font-weight: lighter;
+                    }
+
+                    button {
+                        svg {
+                            width: 15px;
+                        }
+                    }
+
+
+                    .locationBtn {
+                        button {
+                            color: transparent;
+                            border: none;
+                            padding: 0;
+
+                            svg {
+                                fill: white;
+                                margin-right: 5px;
+                                width: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .current-weather {
+                flex-direction: column;
+
+                .main-info {
+                    background: none;
+                    width: 100%;
+                    min-height: 200px;
+                    height: auto;
+                    margin-top: 120px;
+                    align-items: center;
+
+                    .time-div {
+                        margin-bottom: 10px;
+                    }
+
+                    .city-div {
+                        margin-bottom: 10px;
+
+                        h2 {
+                            letter-spacing: 3px;
+                        }
+                    }
+
+                    .temperature-div {
+                        align-items: center;
+
+                        h1 {
+                            font-size: 6rem;
+                            font-weight: 600;
+                        }
+                    }
+                }
+
+                .weather-details {
+                    background: none;
+                    min-height: 200px;
+                    width: 90%;
+                    margin: 0 auto;
+
+                    .detail-container {
+                        height: 80px;
+                        width: 80px;
+
+                        .detail-icon {
+                            svg {
+                                height: 30px;
+                            }
+                        }
+
+                        .detail-info {
+                            h4 {
+                                font-size: 1.2rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .hourly-weather,
+            .daily-weather {
+                .weather-section {
+                    margin-top: 120px;
+                    flex-direction: column;
+
+                    .main-info {
+                        background: none;
+                        width: 100%;
+                        min-height: 200px;
+                        height: auto;
+                        align-items: center;
+
+                        .time-div {
+                            margin-bottom: 10px;
+                        }
+
+                        .city-div {
+                            margin-bottom: 10px;
+
+                            h2 {
+                                letter-spacing: 3px;
+                            }
+                        }
+
+                        .temperature-div {
+                            align-items: center;
+
+                            h1 {
+                                font-size: 6rem;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+
+                    .weather-details {
+                        background: none;
+                        min-height: 200px;
+                        width: 90%;
+                        margin: 0 auto;
+
+                        .detail-container {
+                            height: 80px;
+                            width: 80px;
+
+                            .detail-icon {
+                                svg {
+                                    height: 30px;
+                                }
+                            }
+
+                            .detail-info {
+                                h4 {
+                                    font-size: 1.2rem;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
 
 }

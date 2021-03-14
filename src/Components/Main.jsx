@@ -107,7 +107,7 @@ const Main = () => {
         scrollingSpeed: 900,
         navigation: true,
         navigationPosition: 'right',
-        showActiveTooltip: true,
+        // showActiveTooltip: true,
         anchors: ['currentWeather', 'hourlyWeather', 'dailyWeather'],
         navigationTooltips: ['Current Weather', 'Hourly Weather', 'Daily Weather'],
         verticalCentered: false,
@@ -130,7 +130,7 @@ const Main = () => {
         },
         afterRender: (origin) => {
             t1
-                .fromTo(origin.item.querySelector(".main-info"),
+                .fromTo(origin.item.querySelector(".current-weather .main-info"),
                     {
                         css: {
                             opacity: 0,
@@ -149,7 +149,7 @@ const Main = () => {
                     {
                         css: {
                             opacity: 0,
-                            x: -40
+                            x: 40
                         }
                     }, {
 

@@ -24,7 +24,7 @@ const DailyWeather = (props) => {
     useEffect(
         () => {
             if (activeDay) {
-                t1.fromTo(".weather-section", {
+                t1.fromTo(".daily-weather .weather-section", {
                     css: {
                         opacity: 0
                     },
@@ -34,7 +34,7 @@ const DailyWeather = (props) => {
                     },
                     duration: 0.2
                 })
-                    .fromTo(".main-info", {
+                    .fromTo(".daily-weather .main-info", {
                         css: {
                             opacity: 0,
                             x: -50
@@ -47,7 +47,7 @@ const DailyWeather = (props) => {
                             },
                             duration: 0.4
                         })
-                    .fromTo(".weather-details", {
+                    .fromTo(".daily-weather .weather-details", {
                         css: {
                             opacity: 0,
                             x: 50
@@ -98,8 +98,9 @@ const DailyWeather = (props) => {
                             <h2>{props.city}</h2>
                         </div>
                         <div className="temperature-div">
+                            <h1><span>Day </span>{`${Math.floor(activeDay.temp.day)}°C`}</h1>
+                            <h1><span>Night </span>{`${Math.floor(activeDay.temp.night)}°C`}</h1>
                             <h6>{activeDay.weather[0].main}</h6>
-                            <h1>{`${Math.floor(activeDay.temp.max)}~${Math.floor(activeDay.temp.min)} °C`}</h1>
                         </div>
                     </div>
 
@@ -108,7 +109,7 @@ const DailyWeather = (props) => {
                             <div className="detail-icon"><Rain /></div>
                             <div className="detail-info">
                                 <h4>Chance to Rain</h4>
-                                <h2>{`${(activeDay.pop) * 100} %`}</h2>
+                                <h2>{`${Math.floor((activeDay.pop) * 100)} %`}</h2>
                             </div>
                         </div>
                         <div className="detail-container">

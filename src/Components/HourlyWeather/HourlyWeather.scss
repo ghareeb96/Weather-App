@@ -1,26 +1,32 @@
 .hourly-weather {
-    display: flex;
     flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    height: 95%;
+    display: flex;
+
 
     .weather-section {
         display: flex;
         flex-direction: row;
         margin-top: 150px;
-
-
+        width: 100%;
+        justify-content: space-between;
+        height: 55%;
 
         .main-info {
             background: rgba(rgb(0, 0, 0), 0.4);
-            width: 400px;
-            height: 400px;
+            width: 35%;
+            height: 100%;
+            min-height: 300px;
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
             padding: 10px;
             border: none;
             outline: none;
 
             .time-div {
+                margin-bottom: 20px;
 
                 h4 {
                     font-size: 1.3rem;
@@ -31,10 +37,10 @@
             }
 
             .city-div {
-                margin-bottom: 30px;
+                margin-bottom: 20px;
 
                 h2 {
-                    font-size: 3rem;
+                    font-size: 2.5rem;
                     font-weight: lighter;
                     color: white;
                     letter-spacing: 2px;
@@ -46,11 +52,12 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+                height: 50%;
 
                 h6 {
-                    font-size: 1.3rem;
+                    font-size: 1.4rem;
                     font-weight: lighter;
-                    letter-spacing: 2px;
+                    letter-spacing: 3px;
 
                     span {
                         color: #EBBC2F;
@@ -67,27 +74,26 @@
 
         .weather-details {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            // flex-direction: row;
-            height: 400px;
-            width: 600px;
+            grid-template-columns: repeat(3, 1fr);
+            min-height: 300px;
+            height: 100%;
+            width: 60%;
             background: rgba(rgb(0, 0, 0), 0.4);
             border: none;
             outline: none;
-            margin-left: 50px;
-            justify-content: space-evenly;
 
 
 
             .detail-container {
                 display: flex;
                 flex-direction: column;
-                height: 200px;
-                min-width: 200px;
+                min-height: 150px;
+                width: 150px;
                 padding: 10px 0;
                 color: white;
                 align-items: center;
                 justify-content: space-evenly;
+                margin: auto;
 
 
                 .detail-icon {
@@ -118,14 +124,13 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        width: 1050px;
+        width: 100%;
         background: rgba(black, 0.2);
-        margin-top: 20px;
-        height: 150px;
+        height: 20%;
 
         .hour-container {
             cursor: pointer;
-            width: 150px;
+            width: 15%;
             height: 100%;
             display: flex;
             flex-direction: column;
