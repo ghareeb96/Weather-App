@@ -497,9 +497,15 @@
                         font-weight: lighter;
                     }
 
+                    .searchBar {
+                        input {
+                            font-size: 1.4rem;
+                        }
+                    }
+
                     button {
                         svg {
-                            width: 15px;
+                            width: 20px;
                         }
                     }
 
@@ -513,7 +519,7 @@
                             svg {
                                 fill: white;
                                 margin-right: 5px;
-                                width: 20px;
+                                width: 30px;
                             }
                         }
                     }

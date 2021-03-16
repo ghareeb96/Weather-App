@@ -28,10 +28,6 @@ const Main = () => {
     const [background, setBackground] = useState(Clear);
 
 
-
-
-
-
     const handleChange = (e) => {
         setSearchText(e.target.value);
     }
@@ -108,6 +104,30 @@ const Main = () => {
                         setBackground(Clear)
                         console.log("clear")
                 }
+
+                const t2 = new TimelineMax()
+
+                t2.fromTo(".background", {
+                    css: {
+                        opacity: 1,
+                    }
+                }, {
+                    css: {
+                        opacity: 0
+                    },
+                    duration: 0.4
+                })
+                    .fromTo(".background", {
+                        css: {
+                            opacity: 0,
+                        }
+                    }, {
+                        css: {
+                            opacity: 1
+                        },
+                        duration: 0.4,
+                        delay: 0.4
+                    })
             }
         }
         if (currentWeather) {
