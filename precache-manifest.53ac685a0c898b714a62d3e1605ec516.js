@@ -1,31 +1,55 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "baffa752c6009a2b9d5625bb777ed897",
+    "revision": "0fb78915c344e21781e78fb623abbab2",
     "url": "/Weather-App/index.html"
   },
   {
-    "revision": "938a1e3e3cde6c489a8d",
-    "url": "/Weather-App/static/css/main.c13a5ac7.chunk.css"
+    "revision": "5b7a9b57dbeb60bc4b9e",
+    "url": "/Weather-App/static/css/main.743b174f.chunk.css"
   },
   {
-    "revision": "9b9caa18abf0d9f34e66",
-    "url": "/Weather-App/static/js/2.c736851a.chunk.js"
+    "revision": "b3669eac4b5c73fecf32",
+    "url": "/Weather-App/static/js/2.867a1acd.chunk.js"
   },
   {
     "revision": "e26463aa8c1840de58a84f4d21103e8e",
-    "url": "/Weather-App/static/js/2.c736851a.chunk.js.LICENSE"
+    "url": "/Weather-App/static/js/2.867a1acd.chunk.js.LICENSE"
   },
   {
-    "revision": "938a1e3e3cde6c489a8d",
-    "url": "/Weather-App/static/js/main.f86196c4.chunk.js"
+    "revision": "5b7a9b57dbeb60bc4b9e",
+    "url": "/Weather-App/static/js/main.41dc3f74.chunk.js"
   },
   {
     "revision": "f7a0b8093de90b86c245",
     "url": "/Weather-App/static/js/runtime-main.2f2b1e57.js"
   },
   {
-    "revision": "60ce5114b0b233a254a42e7a510b702e",
-    "url": "/Weather-App/static/media/Palestine.60ce5114.jpg"
+    "revision": "fe26015f6eafafee9d99fab0be04559c",
+    "url": "/Weather-App/static/media/Clear.fe26015f.jpg"
+  },
+  {
+    "revision": "40ba0533e92f9ec150e9580c0cc73023",
+    "url": "/Weather-App/static/media/Clouds.40ba0533.jpg"
+  },
+  {
+    "revision": "5975c9e31b649392261eb082bcdfdc8d",
+    "url": "/Weather-App/static/media/Dust.5975c9e3.jpg"
+  },
+  {
+    "revision": "70a69edd45cc2069a9b15d29fd5ae285",
+    "url": "/Weather-App/static/media/Fog.70a69edd.jpg"
+  },
+  {
+    "revision": "bfbb6fa9bea4cc0b93a61edc73234926",
+    "url": "/Weather-App/static/media/Rain.bfbb6fa9.jpg"
+  },
+  {
+    "revision": "ea5af6c0040d4a63f083b69a3e9c1dc9",
+    "url": "/Weather-App/static/media/Snow.ea5af6c0.jpg"
+  },
+  {
+    "revision": "76fab4af0dee01b4b94788e653c2862a",
+    "url": "/Weather-App/static/media/Thunderstorm.76fab4af.jpg"
   },
   {
     "revision": "8310e98f7e39f7e4f9d41a67e80f0230",
