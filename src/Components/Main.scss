@@ -13,7 +13,7 @@
             width: 100%;
             object-position: center;
             object-fit: cover;
-            filter: blur(2px);
+            filter: blur(1px);
         }
 
         .overlay {
@@ -23,7 +23,7 @@
             width: 100%;
             height: 100%;
             background: black;
-            opacity: 0.5;
+            opacity: 0.4;
         }
     }
 
@@ -473,7 +473,7 @@
     .weather {
         .background {
             .overlay {
-                opacity: 0.7;
+                // opacity: 0.4;
             }
         }
 
@@ -522,6 +522,7 @@
 
             .current-weather {
                 flex-direction: column;
+                justify-content: flex-start;
 
                 .main-info {
                     background: none;
@@ -555,7 +556,8 @@
 
                 .weather-details {
                     background: none;
-                    min-height: 200px;
+                    height: 35%;
+                    min-height: 160px;
                     width: 90%;
                     margin: 0 auto;
 
@@ -583,20 +585,22 @@
                 .weather-section {
                     margin-top: 120px;
                     flex-direction: column;
+                    justify-content: flex-start;
+                    height: 50%;
 
                     .main-info {
                         background: none;
                         width: 100%;
-                        min-height: 200px;
+                        min-height: 180px;
                         height: auto;
                         align-items: center;
 
                         .time-div {
-                            margin-bottom: 10px;
+                            margin-bottom: 8px;
                         }
 
                         .city-div {
-                            margin-bottom: 10px;
+                            margin-bottom: 8px;
 
                             h2 {
                                 letter-spacing: 3px;
@@ -615,9 +619,9 @@
 
                     .weather-details {
                         background: none;
-                        min-height: 200px;
+                        min-height: 160px;
                         width: 90%;
-                        margin: 0 auto;
+                        margin: 15px auto;
 
                         .detail-container {
                             height: 80px;
@@ -625,17 +629,52 @@
 
                             .detail-icon {
                                 svg {
-                                    height: 30px;
+                                    height: 25px;
                                 }
                             }
 
                             .detail-info {
                                 h4 {
-                                    font-size: 1.2rem;
+                                    font-size: 1rem;
                                 }
                             }
                         }
                     }
+                }
+
+                .hours-section,
+                .days-section {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    align-items: center;
+                    width: 100%;
+                    height: 120px;
+
+                    .hour-container,
+                    .day-container {
+                        width: auto;
+                        height: 60px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        padding: 10px;
+
+
+                        .hour,
+                        .day {
+                            margin-bottom: 5px;
+                        }
+
+                        .temperature {
+                            h2 {
+                                color: #EBBC2F;
+                                font-size: 2rem;
+
+                            }
+                        }
+
+                    }
+
                 }
 
             }

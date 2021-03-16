@@ -87,7 +87,7 @@
             .detail-container {
                 display: flex;
                 flex-direction: column;
-                min-height: 150px;
+                height: 150px;
                 width: 150px;
                 padding: 10px 0;
                 color: white;
@@ -154,7 +154,6 @@
                     color: #EBBC2F;
                     font-size: 2.5rem;
                     font-weight: black;
-                    // letter-spacing: 1px;
                 }
             }
 

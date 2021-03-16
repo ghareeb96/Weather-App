@@ -5,9 +5,15 @@ import fullpage from "fullpage.js";
 import HourlyWeather from "./HourlyWeather/HourlyWeather";
 import DailyWeather from "./DailyWeather/DailyWeather";
 import { gsap, TimelineMax } from "gsap";
-import Palestine from './Palestine.jpg';
 import { ReactComponent as SearchIcon } from "./search-interface-symbol.svg"
 import { ReactComponent as LocationIcon } from "./maps-and-flags.svg"
+import Thunderstorm from './Backgrounds/Thunderstorm.jpg';
+import Clouds from './Backgrounds/Clouds.jpg';
+import Clear from './Backgrounds/Clear.jpg';
+import Fog from './Backgrounds/Fog.jpg';
+import Rain from './Backgrounds/Rain.jpg';
+import Snow from './Backgrounds/Snow.jpg';
+import Dust from './Backgrounds/Dust.jpg';
 
 gsap.registerPlugin()
 const Main = () => {
@@ -19,6 +25,7 @@ const Main = () => {
     const [currentWeather, setCurrentWeather] = useState(null);
     const [hourlyWeather, setHourlyWeather] = useState(null);
     const [dailyWeather, setDailyWeather] = useState(null);
+    const [background, setBackground] = useState(Clear);
 
 
 
@@ -55,6 +62,8 @@ const Main = () => {
     }
 
 
+
+
     useEffect(() => {
         const defaultWeather = () => {
             fetch(`https://api.openweathermap.org/data/2.5/weather?q=Palestine&appid=${apiKey}`)
@@ -72,6 +81,39 @@ const Main = () => {
 
     }, [])
 
+    useEffect(() => {
+        const bg_changer = () => {
+            if (currentWeather) {
+                switch (currentWeather.weather[0].main) {
+                    case "Rain" || "Drizzle":
+                        setBackground(Rain)
+                        break;
+                    case "Thunderstorm" || "Tornado" || "Squall":
+                        setBackground(Thunderstorm)
+                        break;
+                    case "Clouds":
+                        setBackground(Clouds)
+                        console.log("clouds")
+                        break;
+                    case "Snow":
+                        setBackground(Snow)
+                        break;
+                    case "Fog" || "Haze" || "Mist" || "Smoke":
+                        setBackground(Fog)
+                        break;
+                    case "Ash" || "Dust" || "Sand":
+                        setBackground(Dust)
+                        break;
+                    default:
+                        setBackground(Clear)
+                        console.log("clear")
+                }
+            }
+        }
+        if (currentWeather) {
+            bg_changer()
+        }
+    }, [currentWeather])
 
     useEffect(() => {
         if (coords) {
@@ -227,7 +269,7 @@ const Main = () => {
         return (
             <div className="weather">
                 <div className="background">
-                    <img src={Palestine} alt="Background" />
+                    <img src={background} alt="Background" />
                     <div className="overlay"></div>
                 </div>
                 <div className="container">

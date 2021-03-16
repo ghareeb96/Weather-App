@@ -98,8 +98,7 @@ const DailyWeather = (props) => {
                             <h2>{props.city}</h2>
                         </div>
                         <div className="temperature-div">
-                            <h1><span>Day </span>{`${Math.floor(activeDay.temp.day)}°C`}</h1>
-                            <h1><span>Night </span>{`${Math.floor(activeDay.temp.night)}°C`}</h1>
+                            <h1>{`${Math.floor(activeDay.temp.day)}°C`} <span>{`${Math.floor(activeDay.temp.night)}°C`}</span></h1>
                             <h6>{activeDay.weather[0].main}</h6>
                         </div>
                     </div>
@@ -156,7 +155,7 @@ const DailyWeather = (props) => {
                         days.map((item, index) => (
                             <div className={activeDay.dt === item.dt ? "day-container active" : "day-container"} onClick={() => { setActiveDay(days[index]) }}>
                                 <div className="day"><h4>{(get_day(item.dt))}</h4></div>
-                                <div className="temperature"><h2>{`${Math.floor(item.temp.max)}~${Math.floor(item.temp.min)} °C`}</h2></div>
+                                <div className="temperature"><h2>{`${Math.floor(item.temp.max)}°C`}</h2></div>
                             </div>
 
                         ))
