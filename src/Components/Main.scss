@@ -71,7 +71,6 @@
                 .nav {
                     width: 50%;
 
-
                     ul {
                         display: flex;
                         flex-direction: row;
@@ -93,16 +92,12 @@
                                 text-decoration: none;
                                 cursor: pointer;
                                 padding: 0.5rem 0.7rem;
-                                // border: 1px solid white;
                                 border-radius: 5px;
-
-
 
                             }
                         }
                     }
                 }
-
             }
 
 
@@ -177,10 +172,7 @@
             height: 100vh;
         }
 
-
-
     }
-
 
 }
 
@@ -262,7 +254,6 @@
                         }
                     }
                 }
-
             }
         }
     }
@@ -275,18 +266,11 @@
 
     .weather {
         .container {
-            header {}
 
             .current-weather {
                 .main-info {
                     min-height: 300px;
                     margin-top: 150px;
-
-                    .time-div {
-
-                        h4 {}
-
-                    }
 
                     .city-div {
 
@@ -300,8 +284,6 @@
                         h6 {
                             letter-spacing: 1px;
                         }
-
-                        h1 {}
 
                     }
                 }
@@ -369,11 +351,9 @@
                         }
                     }
                 }
-
             }
         }
     }
-
 }
 
 @media screen and (max-width : 967px) {
@@ -383,7 +363,6 @@
 
     .weather {
         .container {
-            header {}
 
             .current-weather {
                 .weather-details {
@@ -457,11 +436,9 @@
                         }
                     }
                 }
-
             }
         }
     }
-
 }
 
 
@@ -471,12 +448,6 @@
     }
 
     .weather {
-        .background {
-            .overlay {
-                // opacity: 0.4;
-            }
-        }
-
         .container {
             width: 90%;
 
@@ -494,7 +465,7 @@
                     h3 {
                         color: #EBBC2F;
                         letter-spacing: 1px;
-                        font-weight: lighter;
+                        font-weight: 600;
                     }
 
                     .searchBar {
@@ -547,6 +518,8 @@
 
                         h2 {
                             letter-spacing: 3px;
+                            font-weight: 600;
+
                         }
                     }
 
@@ -556,6 +529,11 @@
                         h1 {
                             font-size: 6rem;
                             font-weight: 600;
+                        }
+
+                        h6 {
+                            font-weight: 600;
+
                         }
                     }
                 }
@@ -580,6 +558,8 @@
                         .detail-info {
                             h4 {
                                 font-size: 1.2rem;
+                                font-weight: 600;
+
                             }
                         }
                     }
@@ -607,9 +587,13 @@
 
                         .city-div {
                             margin-bottom: 8px;
+                            font-weight: 600;
+
 
                             h2 {
                                 letter-spacing: 3px;
+                                font-weight: 600;
+
                             }
                         }
 
@@ -619,6 +603,11 @@
                             h1 {
                                 font-size: 6rem;
                                 font-weight: 600;
+                            }
+
+                            h6 {
+                                font-weight: 600;
+
                             }
                         }
                     }
@@ -642,6 +631,8 @@
                             .detail-info {
                                 h4 {
                                     font-size: 1rem;
+                                    font-weight: 600;
+
                                 }
                             }
                         }
@@ -665,26 +656,26 @@
                         align-items: center;
                         padding: 10px;
 
-
                         .hour,
                         .day {
                             margin-bottom: 5px;
+
+                            h4 {
+                                font-weight: 600;
+                                font-size: 1.1rem;
+                            }
+
                         }
 
                         .temperature {
                             h2 {
                                 color: #EBBC2F;
                                 font-size: 2rem;
-
                             }
                         }
-
                     }
-
                 }
-
             }
         }
     }
-
 }

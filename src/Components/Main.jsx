@@ -237,8 +237,6 @@ const Main = () => {
                         },
                         duration: 0.5,
                         delay: 0.2
-                        // yoyo: true,
-                        // stagger: 0.2
                     }
                 )
                 .fromTo(origin.item.querySelector(".temperature-div"),
