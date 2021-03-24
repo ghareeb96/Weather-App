@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import "./DailyWeather.scss"
-import { gsap, TimelineMax } from "gsap";
+import { TimelineMax } from "gsap";
 import { ReactComponent as Wind } from "../wind.svg"
 import { ReactComponent as Clouds } from "../cloudy.svg"
 import { ReactComponent as Humidity } from "../humidity.svg"

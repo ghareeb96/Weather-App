@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import "./CurrentWeather.scss"
 import { ReactComponent as Wind } from "../wind.svg"
 import { ReactComponent as Visibility } from "../visibility.svg"

@@ -81,28 +81,36 @@ const Main = () => {
         const bg_changer = () => {
             if (currentWeather) {
                 switch (currentWeather.weather[0].main) {
-                    case "Rain" || "Drizzle":
+                    case "Rain":
+                    case "Drizzle":
                         setBackground(Rain)
                         break;
-                    case "Thunderstorm" || "Tornado" || "Squall":
+                    case "Thunderstorm":
+                    case "Tornado":
+                    case "Squall":
                         setBackground(Thunderstorm)
                         break;
                     case "Clouds":
                         setBackground(Clouds)
-                        console.log("clouds")
                         break;
                     case "Snow":
                         setBackground(Snow)
                         break;
-                    case "Fog" || "Haze" || "Mist" || "Smoke":
+                    case "Fog":
+                    case "Haze":
+                    case "Mist":
+                    case "Smoke":
                         setBackground(Fog)
                         break;
-                    case "Ash" || "Dust" || "Sand":
+                    case "Ash":
+                    case "Dust":
+                    case "Sand":
+                        console.log("AAAAA")
+
                         setBackground(Dust)
                         break;
                     default:
                         setBackground(Clear)
-                        console.log("clear")
                 }
 
                 const t2 = new TimelineMax()
